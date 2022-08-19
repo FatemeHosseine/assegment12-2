@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+        body , html{
+            height: 100%;
+
+        }
+        form{
+            background-color: #222;
+            width: 250px;
+            height: 260px;
+            border-radius: 10px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% ,-50%);
+        }
+        input[name= "display"]{
+            background-color: lightgray;
+            height: 40px;
+            width: calc(100% - 30px);
+            margin: 5px;
+            border-radius: 8px;
+            border: none;
+            text-align: right;
+            padding-right: 5px;
+            
+        }
+        input[ type = "button"]{
+            float: left;
+            width: calc(100% / 4 - 5px);
+            background-color: rgb(239, 236, 231);
+            border-radius: 8px;
+            text-align: center;
+            height: 36px;
+            margin-left: 4px;
+            margin-bottom: 5px;
+            border: none;
+        
+
+        }
+        input[type = "button"]:nth-last-of-type(1){
+            background-color: yellow;
+            width: 45%;
+        }
+
+    </style>
+</head>
+<body>
+    <form name="calc">
+        <input type="text" value="" disabled  name="display">
+        <input type="button" value="AC" onclick="AC()">
+        <input type="button" value="C" onclick="c()">
+        <input type="button" value="%" onclick="data(this.value)">
+        <input type="button"  value="-" onclick="data(this.value)">
+
+        <input type="button" value="9" onclick="data(this.value)">
+        <input type="button" value="8" onclick="data(this.value)">
+        <input type="button" value="7" onclick="data(this.value)">
+        <input type="button" value="*" onclick="data(this.value)">
+
+        <input type="button" value="6" onclick="data(this.value)">
+        <input type="button" value="5" onclick="data(this.value)">
+        <input type="button" value="4" onclick="data(this.value)">
+        <input type="button" value="/" onclick="data(this.value)">
+
+        <input type="button" value="3" onclick="data(this.value)">
+        <input type="button" value="2" onclick="data(this.value)">
+        <input type="button" value="1" onclick="data(this.value)">
+        <input type="button" value="+" onclick="data(this.value)">
+        
+        <input type="button" value="0" onclick="data(this.value)">
+        <input type="button" value="." onclick="data(this.value)">
+        <input type="button" value="=" onclick= "equal()">
+<div style="clear: bus;"></div>
+
+
+    </form>
+    <script>
+function data(val){
+    calc.display.value += val;
+
+
+}
+function AC(){
+    calc.display.value = "";
+}
+function c(){
+    calc.display.value = calc.display.value.slice(0 , -1);
+} 
+function equal(){
+    calc.display.value = eval(calc.display.value);
+}
+    </script>
+    
+</body>
+</html>
